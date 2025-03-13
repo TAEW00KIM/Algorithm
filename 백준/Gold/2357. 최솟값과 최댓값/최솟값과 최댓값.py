@@ -50,6 +50,7 @@ class Tree():
     
     def get_min(self, left, right):
         return self.query_min(left, right, 1, 0, self.n - 1)
+        
     def get_max(self, left, right):
         return self.query_max(left, right, 1, 0, self.n - 1)
     
