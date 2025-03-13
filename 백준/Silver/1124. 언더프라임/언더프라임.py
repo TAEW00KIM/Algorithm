@@ -1,4 +1,6 @@
 import math
+import sys
+input = sys.stdin.readline
 
 def solution(n):
     arr = []
@@ -9,7 +11,7 @@ def solution(n):
             n = n // x
         else:
             x += 1
-            if x > int(n ** 0.5): x = n
+            if x > int(math.sqrt(n)): x = n
     return arr
 
 def is_prime(n):
