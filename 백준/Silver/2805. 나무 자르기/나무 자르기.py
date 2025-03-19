@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 n, m = map(int, input().split())
 tree = list(map(int, input().split()))
 start, end = 1, max(tree)
