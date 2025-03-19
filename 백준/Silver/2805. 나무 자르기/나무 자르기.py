@@ -1,18 +1,17 @@
 import sys
+from collections import Counter
 input = sys.stdin.readline
 
 n, m = map(int, input().split())
-tree = list(map(int, input().split()))
-start, end = 1, max(tree)
+trees = Counter(map(int, input().split()))
 
-while start <= end:
-    mid = (start + end) // 2
+s, e = 1, 1000000000
+
+while s <= e:
+    mid = (s + e) // 2
+    tot = sum((h - mid) * i for h, i in trees.items() if h > mid)
     
-    log = 0
-    for i in tree:
-        if i >= mid: log += i - mid
+    if tot >= m: s = mid + 1
+    elif tot < m: e = mid - 1
     
-    if log >= m: start = mid + 1
-    else: end = mid - 1
-    
-print(end)
+print(e)
