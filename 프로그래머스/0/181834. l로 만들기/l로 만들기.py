@@ -1,4 +1,2 @@
 def solution(myString):
-    for i in myString:
-        if ord(i) < ord('l'): myString = myString.replace(i, 'l')
-    return myString
+    return ''.join('l' if c < 'l' else c for c in myString)
